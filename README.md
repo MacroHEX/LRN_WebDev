@@ -1,13 +1,20 @@
 # Aprendiendo HTML y CSS
 
 - [Aprendiendo HTML y CSS](#aprendiendo-html-y-css)
-  - [HTML](#html)
+  - [HTML (HyperText Markup Language)](#html-hypertext-markup-language)
     - [Estructura HTML](#estructura-html)
     - [Algunos Tags Comunes](#algunos-tags-comunes)
     - [Ejemplo](#ejemplo)
       - [Preview](#preview)
+  - [CSS (Cascading Style Sheets)](#css-cascading-style-sheets)
+    - [Estructura CSS](#estructura-css)
+    - [Especificidad](#especificidad)
+      - [Prioridad](#prioridad)
+      - [Como Calcular la Especificidad](#como-calcular-la-especificidad)
 
-## HTML
+## HTML (HyperText Markup Language)
+
+Es un estándar que sirve de referencia del software que conecta con la elaboración de páginas web en sus diferentes versiones, define una estructura básica y un código (denominado código HTML) para la definición de contenido de una página web, como texto, imágenes, videos, juegos, entre otros.
 
 ### Estructura HTML
 
@@ -67,7 +74,6 @@ Más [ejemplos](https://www.w3schools.com/TAGS/default.asp)
   </head>
   <body>
     <h1>Titulo</h1>
-
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos
       earum ullam consequuntur reiciendis est voluptates ducimus iste dolores
@@ -81,3 +87,85 @@ Más [ejemplos](https://www.w3schools.com/TAGS/default.asp)
 #### Preview
 
 ![preview](assets/html1.png)
+
+## CSS (Cascading Style Sheets)
+
+CSS (siglas en inglés de Cascading Style Sheets), en español «Hojas de estilo en cascada», es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.
+
+### Estructura CSS
+
+```css
+/* selector {
+  propiedad: valor;
+} */
+
+/* Selector Universal */
+* {
+  color: red;
+}
+
+/* Selector de Tipo */
+h1 {
+  color: blue;
+}
+
+/* Selector de Clases */
+.titulo-h1 {
+  color: cyan;
+}
+
+/* Selector por ID */
+#id-element {
+  color: purple;
+}
+
+/* Selector por Atributo */
+[atributo="Algo"] {
+  color: aqua;
+}
+
+/* Selector Descendente */
+h2 p {
+  color: aliceblue;
+}
+
+/* Selector por Pseudo-clase */
+p:hover {
+  color: black;
+}
+```
+
+### Especificidad
+
+La especificidad es la manera mediante la cual los navegadores deciden qué valores de una propiedad CSS son más relevantes para un elemento y, por lo tanto, serán aplicados. La especificidad está basada en las reglas de coincidencia que están compuestas por diferentes tipos de selectores CSS.
+
+#### Prioridad
+
+- !important
+- estilos de linea
+- Identificadores
+- clases
+- pseudo-clases
+- atributos
+- elementos
+- pseudo-elementos
+
+Más [info](https://developer.mozilla.org/es/docs/Web/CSS/Specificity)
+
+#### Como Calcular la Especificidad
+
+Empezamos en 0, añadiendo 100 por cada ID, 10 por cada clase (o pseudo-clase o selector de atributo), añadir 1 por cada selector de elemento o pseudo-elemento.
+
+Los estilos de linea reciben un valor de especificidad de 1000 y siempre se les da la máxima prioridad a excepción de !important
+
+| Selector                 | Valor de Especificidad | Calculo                               |
+| :----------------------- | :--------------------- | :------------------------------------ |
+| p                        | 1                      | 1                                     |
+| p.test                   | 11                     | 1 + 10                                |
+| p#demo                   | 101                    | 1 +100                                |
+| `<p style="color: pink>` | 1000                   | 1000                                  |
+| #demo                    | 100                    | 100                                   |
+| .test                    | 10                     | 10                                    |
+| p.test1.test2            | 21                     | 1 + 10 +10                            |
+| #navbar p#demo           | 201                    | 100+1+100                             |
+| \*                       | 0                      | 0 (el selector universal es ignorado) |
