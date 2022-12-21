@@ -11,6 +11,19 @@
     - [Especificidad](#especificidad)
       - [Prioridad](#prioridad)
       - [Como Calcular la Especificidad](#como-calcular-la-especificidad)
+    - [Metodologia BEM](#metodologia-bem)
+      - [HTML](#html)
+      - [CSS](#css)
+    - [Unidades](#unidades)
+    - [Padding](#padding)
+    - [Posicion](#posicion)
+    - [Display](#display)
+    - [Overflow](#overflow)
+    - [Pseudo-elementos](#pseudo-elementos)
+    - [Pseudo-clases](#pseudo-clases)
+    - [Cursor](#cursor)
+    - [CSS @media Rule](#css-media-rule)
+    - [Flexbox](#flexbox)
 
 ## HTML (HyperText Markup Language)
 
@@ -169,3 +182,193 @@ Los estilos de linea reciben un valor de especificidad de 1000 y siempre se les 
 | p.test1.test2            | 21                     | 1 + 10 +10                            |
 | #navbar p#demo           | 201                    | 100+1+100                             |
 | \*                       | 0                      | 0 (el selector universal es ignorado) |
+
+### Metodologia BEM
+
+#### HTML
+
+```html
+<div class="contact-form">
+  <input type="text" class="contact-form__input" />
+  <input type="text" class="contact-form__input" />
+  <input type="text" class="contact-form__input--active" />
+</div>
+```
+
+#### CSS
+
+```css
+.contact-form__input {
+  color: red;
+}
+.contact-form__input:first-child {
+  color: blue;
+}
+.contact-form__input--active {
+  color: cyan;
+}
+```
+
+Más info selectores [aquí](https://www.w3schools.com/cssref/css_selectors.php)
+
+[CSS Handbook](https://www.freecodecamp.org/news/the-css-handbook-a-handy-guide-to-css-for-developers-b56695917d11/)
+
+### Unidades
+
+- Unidades Relativas
+
+  - 1em = 16px por defecto
+
+  - vh: vieport heigth
+
+  - vw: viewport weidth
+
+  - %: porcentaje del contenedor
+
+- Unidades Fijas
+
+### Padding
+
+Distancia entre el texto y la caja
+
+### Posicion
+
+`position` es una propiedad de CSS que indica como se posicionara un elemento en el documento. Las propiedades `top`, `right`, `bottom` y `left` determinan la ubicacion final de los elementos.
+
+- STATIC
+
+  ![static](assets/position-static.svg)
+
+  Los elementos posiciones con `static` no son afectados por las propiedades `top`, `right`, `bottom` y `left`.
+
+  Un elemento con `position: static` no tiene una ubicacion especial; siempre se ubica siguiente el flujo normal de la página.
+
+  Ejemplo:
+
+  ```html
+  <!-- HTML -->
+  <div class="static"></div>
+  ```
+
+  ```css
+  /* CSS */
+  div.static {
+    position: static;
+  }
+  ```
+
+- RELATIVE
+
+  ![relative](assets/position-relative.svg)
+
+  El elemento se ubica de acuerdo el flujo del documento y luego hace un offset _relativo_ a si basado a los valores de `top`, `right`, `bottom` y `left`. El offset no afecta la posición de los otros elementos; por lo tanto el espacio para el elemento en el layout de la página es la misma que si su posición fuese `static`.
+
+  Este valor
+
+  Ejemplo:
+
+  ```html
+  <!-- HTML -->
+  <div class="relative"></div>
+  ```
+
+  ```css
+  /* CSS */
+  div.relative {
+    position: relative;
+    left: 30px;
+  }
+  ```
+
+- ABSOLUTE
+
+  ![absolute](assets/position-absolute.svg)
+
+  El elemento con `position: absolute;` se ubica relativo a su ancestro de posición (si se encuentra dentro de un div es relativo a él)
+
+  Ejemplo:
+
+  ```html
+  <!-- HTML -->
+  <div class="absolute"></div>
+  ```
+
+  ```css
+  /* CSS */
+  div.absolute {
+    position: absolute;
+    right: 0;
+  }
+  ```
+
+- FIXED
+
+  ![fixed](assets/position-fixed.svg)
+
+  <!-- TODO -->
+
+- STICKY
+  <!-- TODo -->
+
+Más [info](https://www.w3schools.com/css/css_positioning.asp)
+
+### Display
+
+- block
+- inline
+- inline-block
+- flex
+- grid
+- inline-flex
+- inline-grid
+
+Más [info](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
+[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+### Overflow
+
+- Visible
+- Hidden
+- Scroll
+- Auto
+
+Más [info](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
+
+### Pseudo-elementos
+
+| Nombre         | Donde Funciona                       |
+| :------------- | :----------------------------------- |
+| ::first-line   | BLOCK                                |
+| ::first-letter | BLOCK                                |
+| ::placeholder  |                                      |
+| ::selection    |                                      |
+| ::after        | HIJOS - CONTENT (NECESARIO) - INLINE |
+| ::before       | HIJOS - CONTENT (NECESARIO) - INLINE |
+
+Más [info](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+
+### Pseudo-clases
+
+| Nombre   | Descripcion |
+| :------- | :---------- |
+| :hover   |             |
+| :link    |             |
+| :visited |             |
+| :active  |             |
+| :focus   |             |
+| :lang    |             |
+
+Más [info](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+
+
+### Cursor
+
+Más [info](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)
+
+### CSS @media Rule
+
+Más [info](https://www.w3schools.com/cssref/css3_pr_mediaquery.php)
+
+### Flexbox
+
+Leer [pdf](assets/flexbox%20properties.pdf) de [Kevin Powell](https://www.youtube.com/@KevinPowell)

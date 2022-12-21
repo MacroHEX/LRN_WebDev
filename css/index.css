@@ -1,0 +1,23 @@
+* {
+    color: red;
+    box-sizing: border-box;
+  }
+  h1 {
+    color: blue;
+  }
+  .titulo-h1 {
+    color: cyan;
+  }
+  #id-element {
+    color: purple;
+  }
+  [atributo="Algo"] {
+    color: aqua;
+  }
+  h2 p {
+    color: aliceblue;
+  }
+  #titulo-h2:hover {
+    color: black;
+  }
+  

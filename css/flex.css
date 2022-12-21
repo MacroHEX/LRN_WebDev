@@ -1,0 +1,50 @@
+* {
+  font-family: "Sen", sans-serif;
+  font-weight: 100;
+}
+
+.flex-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #444;
+    margin: 50px 50px;
+}
+
+.form{
+    min-width: 400px;
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+}
+
+.form__input{
+    width: 100%;
+    padding: 7px;
+    margin: 6px 0;;
+}
+
+.form textarea{
+    min-height: 140px;
+}
+
+.form-img{
+    flex: 1;
+    padding: 10px;
+    display: flex;
+}
+
+.form-img div{
+    padding: 10px;
+}
+
+.img-container{
+    margin: auto;
+}
+
+.form-img img{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 50%;
+}
