@@ -13,7 +13,7 @@
 }
 
 .form{
-    min-width: 400px;
+    width: 100%;
     flex: 1;
     text-align: center;
     padding: 30px;
@@ -22,7 +22,7 @@
 .form__input{
     width: 100%;
     padding: 7px;
-    margin: 6px 0;;
+    margin: 6px 0;
 }
 
 .form textarea{
