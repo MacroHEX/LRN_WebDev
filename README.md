@@ -308,7 +308,7 @@ Distancia entre el texto y la caja
   <!-- TODO -->
 
 - STICKY
-  <!-- TODo -->
+  <!-- TODO -->
 
 Más [info](https://www.w3schools.com/css/css_positioning.asp)
 
@@ -359,7 +359,6 @@ Más [info](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
 | :lang    |             |
 
 Más [info](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
-
 
 ### Cursor
 
